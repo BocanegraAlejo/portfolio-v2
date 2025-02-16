@@ -49,7 +49,7 @@ export default function Hero() {
           <ChevronDown className="h-8 w-8 text-zinc-500" />
         </motion.div>
       </div>
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 space-y-6">
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 space-y-6 hidden md:block">
         {[
           "Desarrollo Web",
           "Apps Móviles",
@@ -73,7 +73,7 @@ export default function Hero() {
           </motion.div>
         ))}
       </div>
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 space-y-6">
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 space-y-6 hidden md:block">
         {[
           "5+ años exp.",
           "Full Stack Dev",
