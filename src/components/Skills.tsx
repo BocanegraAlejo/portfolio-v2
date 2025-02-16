@@ -19,6 +19,7 @@ export default function Skills() {
     "Php",
     "Laravel",
     "Codeigniter",
+    "Wordpress",
     "Livewire",
     "Bootstrap",
     "Tailwind",

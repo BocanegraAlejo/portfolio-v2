@@ -8,9 +8,9 @@ import Header from "@/components/Header"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Alejo Bocanegra - Frontend Developer",
-  description: "Portfolio de Alejo Bocanegra, Frontend Developer y Web Designer",
-    generator: 'v0.dev'
+  title: "Alejo Bocanegra | Portfolio",
+  description: "Desarrollador Web Fullstack especializado en PHP Laravel. Portafolio profesional con proyectos y experiencia en desarrollo web.",
+  authors: [{ name: "Alejo Bocanegra" }]
 }
 
 export default function RootLayout({

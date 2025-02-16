@@ -1,14 +1,13 @@
-"use client"
-
 import Link from "next/link"
-import { Code2, Github } from "lucide-react"
+import { Github } from "lucide-react"
+import Image from "next/image"
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background ">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-primary hover:text-primary/80">
-          <Code2 className="h-8 w-8" />
+          <Image src="/images/logo.png" alt="AB Desarrollos Logo" width={60} height={60} />
           <span className="sr-only">Inicio</span>
         </Link>
         <nav className="hidden space-x-8 text-sm font-medium md:flex">

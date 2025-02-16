@@ -9,28 +9,28 @@ export default function Experience() {
     {
       title: "Fullstack Developer",
       company: "Traders Business School",
-      period: "2024 - Presente",
-      description:"desarrollo de solucion web completa, utilizando CodeIgniter para el backend y Next.js para el frontend. También contribuyo al desarrollo de la app mobile.",
+      period: "",
+      description:"Desarrollo de soluciones web completas. También contribuyo al desarrollo de la App Mobile.",
+    },
+    {
+      title: "FullStack Developer",
+      company: "SQL System S.A",
+      period: "",
+      description:
+        "Desarrollo de sistemas web para instituciones educativas, integrando ARCA para facturación electrónica, pasarelas de pago como MercadoPago y Roela, y herramientas para la generación de reportes en PDF y envío de correos con Mailgun, mejorando la eficiencia administrativa y la experiencia del usuario",
     },
     {
       title: "Founder",
       company: "Sitios Para Radios",
-      period: "2023 - Presente",
+      period: "",
       description:
         "Marca registrada bajo mi nombre, ofrezco Servicios de Portales de noticias para emisoras de Radio y Desarrollo de Aplicaciones Android.",
     },
     {   
       title: "Chatbot Developer",
       company: "Automation Tech Studio",
-      period: "2023 - Presente",
-      description:"Colaboro en el desarrollo de chatbots utilizando Botmaker y desarrollo APIs para integrarlos con otras soluciones",
-    },
-    {
-      title: "FullStack Developer",
-      company: "SQL System S.A",
-      period: "2021 - Presente",
-      description:
-        "Desarrollo de sistemas web para instituciones educativas, integrando ARCA para facturación electrónica, pasarelas de pago como MercadoPago y Roela, y herramientas para la generación de reportes en PDF y envío de correos con Mailgun, mejorando la eficiencia administrativa y la experiencia del usuario",
+      period: "",
+      description:"Colaboro en el desarrollo de chatbots utilizando Botmaker y desarrollo APIs para integrarlos con otras soluciones. ",
     },
 
   ]
