@@ -19,6 +19,12 @@ export default function Experience() {
       description:
         "Desarrollo de sistemas web para instituciones educativas, integrando ARCA para facturación electrónica, pasarelas de pago como MercadoPago y Roela, y herramientas para la generación de reportes en PDF y envío de correos con Mailgun, mejorando la eficiencia administrativa y la experiencia del usuario",
     },
+    {   
+      title: "Chatbot Developer",
+      company: "Automation Tech Studio",
+      period: "",
+      description:"Colaboro en el desarrollo de chatbots utilizando Botmaker y desarrollo APIs para integrarlos con otras soluciones. ",
+    },
     {
       title: "Founder",
       company: "Sitios Para Radios",
@@ -26,12 +32,7 @@ export default function Experience() {
       description:
         "Marca registrada bajo mi nombre, ofrezco Servicios de Portales de noticias para emisoras de Radio y Desarrollo de Aplicaciones Android.",
     },
-    {   
-      title: "Chatbot Developer",
-      company: "Automation Tech Studio",
-      period: "",
-      description:"Colaboro en el desarrollo de chatbots utilizando Botmaker y desarrollo APIs para integrarlos con otras soluciones. ",
-    },
+ 
 
   ]
 

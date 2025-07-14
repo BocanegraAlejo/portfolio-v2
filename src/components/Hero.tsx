@@ -24,7 +24,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl">
-          Más de 5 años de experiencia desarrollando aplicaciones web
+          Más de 7 años de experiencia desarrollando aplicaciones web
           eficientes, escalables y orientadas a la experiencia del usuario.
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
