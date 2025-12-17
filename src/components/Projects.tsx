@@ -8,6 +8,20 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "Cheqauto",
+    description:
+      "Plataforma web con IA para inspección de vehículos usados. Permite subir fotos de un automóvil y recibir informes PDF detallados que identifican daños.",
+    tags: [
+      "Next.js",
+      "Firebase",
+      "Qstash",
+      "OpenAI API",
+      "Puppeteer",
+    ],
+    image: "/images/projects/project-cheqauto.png",
+    demo: "https://www.cheqauto.com/",
+  },
+  {
     title: "FM 102.1 Elevate",
     description:
       "Desarrollo de sitio web con reproductor de streaming, incluyendo la maquetación completa de la interfaz",
@@ -58,8 +72,7 @@ const projects = [
   },
   {
     title: "FM Laberinto",
-    description:
-      "Desarrollo completo de Portal de Noticias autoadministrable",
+    description: "Desarrollo completo de Portal de Noticias autoadministrable",
     tags: ["Laravel", "Livewire", "Filament", "MySQL"],
     image: "/images/projects/project-fmlaberinto.png",
     demo: "",
