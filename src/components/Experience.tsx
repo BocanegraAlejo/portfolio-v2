@@ -6,12 +6,12 @@ import { Briefcase } from "lucide-react"
 export default function Experience() {
   const experiences = [
     
-    {
+   /* {
       title: "Fullstack Developer",
       company: "Traders Business School",
       period: "",
       description:"Colaboro en el desarrollo de soluciones web completas. También contribuyo al desarrollo de la App Mobile.",
-    }, 
+    }, */
     {
       title: "FullStack Developer",
       company: "SQL System S.A",

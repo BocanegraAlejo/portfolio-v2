@@ -10,13 +10,12 @@ const projects = [
   {
     title: "Cheqauto",
     description:
-      "Plataforma web con IA para inspección de vehículos usados. Permite subir fotos de un automóvil y recibir informes PDF detallados que identifican daños.",
+      "Plataforma web con IA para inspección de vehículos usados.",
     tags: [
       "Next.js",
       "Firebase",
       "Qstash",
       "OpenAI API",
-      "Puppeteer",
     ],
     image: "/images/projects/project-cheqauto.png",
     demo: "https://www.cheqauto.com/",
