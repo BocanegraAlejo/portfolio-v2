@@ -2,64 +2,62 @@
 
 import { motion } from "framer-motion"
 import { Briefcase } from "lucide-react"
+import { useI18n } from "@/i18n/provider"
+import { experiences } from "@/config/experience"
+import SectionHeading from "@/components/SectionHeading"
 
 export default function Experience() {
-  const experiences = [
-    
-   /* {
-      title: "Fullstack Developer",
-      company: "Traders Business School",
-      period: "",
-      description:"Colaboro en el desarrollo de soluciones web completas. También contribuyo al desarrollo de la App Mobile.",
-    }, */
-    {
-      title: "FullStack Developer",
-      company: "SQL System S.A",
-      period: "",
-      description:
-        "Desarrollo de sistemas web para instituciones educativas, integrando ARCA para facturación electrónica, pasarelas de pago como MercadoPago y Roela, y herramientas para la generación de reportes en PDF y envío de correos con Mailgun, mejorando la eficiencia administrativa y la experiencia del usuario",
-    },
-    {   
-      title: "Chatbot Developer",
-      company: "Automation Tech Studio",
-      period: "",
-      description:"Colaboro en el desarrollo de chatbots utilizando Botmaker y desarrollo APIs para integrarlos con otras soluciones. ",
-    },
-    {
-      title: "Founder",
-      company: "Sitios Para Radios",
-      period: "",
-      description:
-        "Marca registrada bajo mi nombre, ofrezco Servicios de Portales de noticias para emisoras de Radio y Desarrollo de Aplicaciones Android.",
-    },
- 
-
-  ]
+  const { t, tf } = useI18n()
 
   return (
-    <section id="experiencia" className="py-20">
+    <section id="experiencia" className="scroll-mt-24 py-20 sm:py-28">
       <div className="container">
-        <h2 className="mb-16 text-3xl font-bold text-white sm:text-4xl">Experiencia Laboral</h2>
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.title + index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="relative pl-8 border-l border-orange-500"
-            >
-              <Briefcase className="absolute -left-3 top-0 h-6 w-6 bg-zinc-950 text-orange-500" />
-              <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-              <p className="text-orange-500">{exp.company}</p>
-              <p className="text-sm text-zinc-400">{exp.period}</p>
-              <p className="mt-2 text-zinc-300">{exp.description}</p>
-            </motion.div>
-          ))}
+        <SectionHeading kicker={t.experience.kicker} title={t.experience.title} />
+
+        <div className="relative mt-14 max-w-3xl">
+          {/* Vertical line */}
+          <span
+            className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-brand/60 via-border to-transparent"
+            aria-hidden
+          />
+
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={exp.company + index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="relative pl-14"
+              >
+                <span className="absolute left-0 top-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand/30 bg-brand/10 text-brand">
+                  <Briefcase className="h-4 w-4" />
+                </span>
+
+                <div className="gradient-border rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm sm:p-6">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                    <h3 className="font-display text-lg font-semibold text-foreground">
+                      {tf(exp.role)}
+                    </h3>
+                    {exp.period && (
+                      <span className="text-xs font-medium text-muted-foreground">
+                        {exp.period}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-0.5 text-sm font-medium text-brand">
+                    {exp.company}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {tf(exp.description)}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
