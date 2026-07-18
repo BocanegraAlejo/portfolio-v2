@@ -1,6 +1,23 @@
 import { NextResponse } from "next/server"
+import { Resend } from "resend"
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const TO = process.env.CONTACT_TO_EMAIL ?? "alejoezequiel0909@gmail.com"
+const FROM = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev"
+
+const escapeHtml = (value: string) =>
+  value.replace(
+    /[&<>"']/g,
+    (char) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[char] as string,
+  )
 
 export async function POST(request: Request) {
   let data: unknown
@@ -23,20 +40,31 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Validation failed" }, { status: 422 })
   }
 
-  // TODO: enviar el email de verdad.
-  // Recomendado: Resend (https://resend.com). Instalá `resend`, agregá
-  // RESEND_API_KEY a las env vars y descomentá:
-  //
-  //   import { Resend } from "resend"
-  //   const resend = new Resend(process.env.RESEND_API_KEY)
-  //   await resend.emails.send({
-  //     from: "portfolio@tudominio.com",
-  //     to: "alejoezequiel0909@gmail.com",
-  //     replyTo: email,
-  //     subject: `Nuevo mensaje de ${name}`,
-  //     text: message,
-  //   })
-  console.log("[contact] nuevo mensaje:", { name, email, message })
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.error("[contact] falta RESEND_API_KEY")
+    return NextResponse.json({ error: "Email not configured" }, { status: 500 })
+  }
+
+  const resend = new Resend(apiKey)
+
+  const { error } = await resend.emails.send({
+    from: `Portfolio <${FROM}>`,
+    to: TO,
+    replyTo: email,
+    subject: `Nuevo mensaje de ${name.trim()}`,
+    text: `Nombre: ${name.trim()}\nEmail: ${email}\n\n${message.trim()}`,
+    html: `
+      <p><strong>Nombre:</strong> ${escapeHtml(name.trim())}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p style="white-space:pre-wrap">${escapeHtml(message.trim())}</p>
+    `,
+  })
+
+  if (error) {
+    console.error("[contact] error al enviar:", error)
+    return NextResponse.json({ error: "Send failed" }, { status: 502 })
+  }
 
   return NextResponse.json({ ok: true })
 }
